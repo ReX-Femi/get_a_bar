@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get A Bar — Concept Note & Brand Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --cream: #F5F0E8;
+    --gold: #C8960A;
+    --gold-light: #F0C84A;
+    --copper: #B5541A;
+    --charcoal: #1C1C1C;
+    --stone: #6B6560;
+    --mist: #E8E2D8;
+    --forest: #1A3C2E;
+    --rose: #C4504A;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--charcoal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 40px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(200,150,10,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 20% 80%, rgba(181,84,26,0.10) 0%, transparent 60%);
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(72px, 14vw, 160px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 0.9;
+    text-align: center;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.4s;
+    position: relative;
+  }
+
+  .hero-logo span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 40px auto;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(245,240,232,0.75);
+    text-align: center;
+    max-width: 620px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-sub {
+    margin-top: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.0s;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.4s;
+  }
+
+  .hero-scroll span {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: pulse 2s ease infinite;
+  }
+
+  /* ─── SECTION STRUCTURE ─────────────────────────── */
+  section { position: relative; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--mist);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  /* ─── ORIGIN SECTION ─────────────────────────────── */
+  .origin {
+    padding: 120px 0;
+    background: var(--cream);
+  }
+
+  .origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .origin-text .section-title {
+    font-size: clamp(40px, 5vw, 64px);
+    color: var(--charcoal);
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+
+  .origin-text .section-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .lead-text {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--stone);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .origin-visual {
+    background: var(--charcoal);
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .origin-visual::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(ellipse at top right, rgba(200,150,10,0.15), transparent 70%);
+  }
+
+  .problem-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .problem-item:last-child { border-bottom: none; }
+
+  .problem-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(200,150,10,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .problem-text {
+    flex: 1;
+  }
+
+  .problem-text strong {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .problem-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.7);
+    font-weight: 300;
+  }
+
+  /* ─── THE SOLUTION ──────────────────────────────── */
+  .solution {
+    background: var(--charcoal);
+    padding: 120px 0;
+    overflow: hidden;
+  }
+
+  .solution-inner {
+    position: relative;
+  }
+
+  .solution-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .solution-header .section-title {
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .solution-header .section-title em { color: var(--gold); }
+
+  .solution-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.65);
+    max-width: 680px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(245,240,232,0.05);
+  }
+
+  .pillar {
+    background: var(--charcoal);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+
+  .pillar:hover { background: #242424; }
+
+  .pillar::after {
+    content: attr(data-num);
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(200,150,10,0.05);
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.3s ease;
+  }
+
+  .pillar:hover::after { color: rgba(200,150,10,0.08); }
+
+  .pillar-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .pillar-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+  }
+
+  .pillar-accent {
+    display: block;
+    margin-top: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ─── BRAND STORY ───────────────────────────────── */
+  .brand-story {
+    background: var(--cream);
+    padding: 140px 0;
+  }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 80px;
+  }
+
+  .story-sidebar {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+  }
+
+  .story-sidebar .section-title {
+    font-size: 48px;
+    color: var(--charcoal);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .story-sidebar .section-title em { color: var(--gold); font-style: italic; }
+
+  .story-meta {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--mist);
+  }
+
+  .story-meta-item {
+    margin-bottom: 24px;
+  }
+
+  .story-meta-item strong {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .story-meta-item span {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+
+  .story-content p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #444;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .story-content p:first-child {
+    font-size: 22px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .pull-quote {
+    margin: 48px 0;
+    padding: 40px 48px;
+    background: var(--charcoal);
+    position: relative;
+  }
+
+  .pull-quote::before {
+    content: '"';
+    position: absolute;
+    top: -24px;
+    left: 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.6;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px !important;
+    line-height: 1.55 !important;
+    color: var(--cream) !important;
+    font-style: italic;
+    font-weight: 400 !important;
+    margin: 0 !important;
+  }
+
+  /* ─── BRAND IDENTITY ────────────────────────────── */
+  .brand-identity {
+    background: var(--forest);
+    padding: 120px 0;
+  }
+
+  .identity-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .identity-header .section-title {
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    margin-bottom: 2px;
+  }
+
+  .identity-card {
+    background: var(--forest);
+    padding: 48px 40px;
+    transition: background 0.3s;
+  }
+
+  .identity-card:hover { background: #1f4836; }
+
+  .identity-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(200,150,10,0.8);
+    margin-bottom: 12px;
+  }
+
+  .identity-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .identity-card-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.65);
+    font-weight: 300;
+  }
+
+  .personality-chips {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .chip {
+    padding: 10px 24px;
+    border: 1px solid rgba(200,150,10,0.4);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    transition: all 0.25s ease;
+  }
+
+  .chip:hover {
+    background: var(--gold);
+    color: var(--charcoal);
+    border-color: var(--gold);
+  }
+
+  /* ─── SERVICE TIERS ─────────────────────────────── */
+  .services {
+    background: var(--cream);
+    padding: 120px 0;
+  }
+
+  .services-header {
+    margin-bottom: 64px;
+  }
+
+  .services-header .section-title {
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--mist);
+    margin-bottom: 64px;
+  }
+
+  .tier {
+    background: var(--cream);
+    padding: 48px 36px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tier.featured {
+    background: var(--charcoal);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: 0; right: 0;
+    background: var(--gold);
+    padding: 6px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .tier-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .tier-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .tier:not(.featured) .tier-title { color: var(--charcoal); }
+  .tier.featured .tier-title { color: var(--cream); }
+
+  .tier-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+
+  .tier:not(.featured) .tier-price { color: var(--stone); }
+  .tier.featured .tier-price { color: var(--gold); }
+
+  .tier-features {
+    list-style: none;
+  }
+
+  .tier-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid;
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .tier:not(.featured) .tier-features li {
+    border-color: var(--mist);
+    color: #555;
+  }
+
+  .tier.featured .tier-features li {
+    border-color: rgba(245,240,232,0.1);
+    color: rgba(245,240,232,0.7);
+  }
+
+  .tier-features li::before {
+    content: '—';
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── REVENUE STREAMS ───────────────────────────── */
+  .revenue {
+    background: var(--charcoal);
+    padding: 120px 0;
+  }
+
+  .revenue-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .revenue-header .section-title {
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  .streams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(245,240,232,0.05);
+  }
+
+  .stream {
+    background: var(--charcoal);
+    padding: 40px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .stream:hover { background: #242424; }
+
+  .stream-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: rgba(200,150,10,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .stream:hover .stream-num { color: rgba(200,150,10,0.15); }
+
+  .stream-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  .stream-body {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(245,240,232,0.55);
+    font-weight: 300;
+  }
+
+  /* ─── WHY NOW ───────────────────────────────────── */
+  .why-now {
+    background: var(--cream);
+    padding: 120px 0;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--mist);
+    margin-top: 64px;
+  }
+
+  .stat {
+    background: var(--cream);
+    padding: 48px 32px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .stat-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--mist);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ─── CLOSING ───────────────────────────────────── */
+  .closing {
+    background: var(--charcoal);
+    padding: 120px 40px;
+    text-align: center;
+  }
+
+  .closing-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .closing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.05;
+    margin-bottom: 32px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .closing-title em { color: var(--gold); font-style: italic; }
+
+  .closing-body {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.6);
+    max-width: 620px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+  }
+
+  .closing-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+
+  /* ─── ANIMATIONS ────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ─── PRINT/RESPONSIVE ──────────────────────────── */
+  @media (max-width: 900px) {
+    .origin-grid, .story-layout { grid-template-columns: 1fr; gap: 48px; }
+    .pillars, .tiers-grid { grid-template-columns: 1fr; }
+    .streams-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .identity-grid { grid-template-columns: 1fr; }
+    .story-sidebar { position: static; }
+    .container { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Concept Note &amp; Brand Story &nbsp;·&nbsp; Insight 360 Strategic Brief &nbsp;·&nbsp; 2026</p>
+  <h1 class="hero-logo">Get <span>A</span> Bar</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">Premium self-service cocktail &amp; mocktail experiences — perfectly crafted, every time, anywhere.</p>
+  <p class="hero-sub">A new venture by Insight 360 &nbsp;·&nbsp; Powered by Bartesian Technology</p>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- THE ORIGIN -->
+<section class="origin">
+  <div class="container">
+    <div class="origin-grid">
+      <div class="origin-text">
+        <p class="section-label">01 &nbsp; The Problem</p>
+        <h2 class="section-title">The cocktail industry has a <em>consistency crisis.</em></h2>
+        <p class="lead-text">Walk into any private event in Lagos. Someone ordered a cocktail service. The drinks look the part — but halfway through the night, the same cocktail tastes different. The ice has melted in the heat. Nobody really knows which alcohol went into the third round. And the bartender? Halfway across the room.</p>
+        <p class="lead-text">The people paying premium prices for event bar services deserve better than improvised mixology and guesswork. They deserve precision — and they deserve privacy.</p>
+      </div>
+      <div class="origin-visual">
+        <div class="problem-item">
+          <div class="problem-icon">⚖</div>
+          <div class="problem-text">
+            <strong>Taste Inconsistency</strong>
+            <p>Manual cocktail mixing varies from drink to drink, bartender to bartender. The third glass never tastes like the first.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">❓</div>
+          <div class="problem-text">
+            <strong>Quality Opacity</strong>
+            <p>Guests never truly know what spirit — and at what strength — went into their drink. Premium pricing, uncertain quality.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🧊</div>
+          <div class="problem-text">
+            <strong>The Ice Problem</strong>
+            <p>Standard ice uses unfiltered tap water, affects flavour, dilutes drinks unpredictably. Nobody talks about it. Everyone notices it.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🚪</div>
+          <div class="problem-text">
+            <strong>Privacy at Private Events</strong>
+            <p>High-net-worth hosts don't want strangers flowing through their homes. A bar team of five is an intrusion, not a service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <div class="solution-inner">
+      <div class="solution-header">
+        <p class="section-label" style="justify-content:center;">02 &nbsp; The Concept</p>
+        <h2 class="section-title">The <em>answer</em> isn't a better bartender.<br>It's a smarter bar.</h2>
+        <p class="solution-intro">Get A Bar brings precision cocktail machine technology — led by Bartesian, the world's most sophisticated home and commercial cocktail maker — into the premium private events space in Nigeria. Every drink, identical. Every ingredient, verified. Every guest, empowered.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar" data-num="1">
+          <span class="pillar-icon">🎯</span>
+          <h3 class="pillar-title">Machine Precision</h3>
+          <p class="pillar-body">Bartesian's cocktail makers use pod-based barcoded capsules — each scanned and dispensed to an exact recipe. The machine never improvises. Every Margarita at 11pm is identical to the first one served at 7pm.</p>
+          <span class="pillar-accent">Consistency guaranteed</span>
+        </div>
+        <div class="pillar" data-num="2">
+          <span class="pillar-icon">✅</span>
+          <h3 class="pillar-title">Total Transparency</h3>
+          <p class="pillar-body">Guests choose their cocktail capsule. They see the spirit bottles. They select their strength — from Mocktail to Strong. What goes in is visible. What comes out is predictable. No mysteries.</p>
+          <span class="pillar-accent">Every ingredient, known</span>
+        </div>
+        <div class="pillar" data-num="3">
+          <span class="pillar-icon">💧</span>
+          <h3 class="pillar-title">Pure Ice Standard</h3>
+          <p class="pillar-body">Get A Bar's ice makers are fed exclusively from premium bottled or filtered water — never tap. The ice in your guest's glass meets the same standard as the spirit. A detail nobody else in Lagos is talking about.</p>
+          <span class="pillar-accent">Purity, not compromise</span>
+        </div>
+        <div class="pillar" data-num="4">
+          <span class="pillar-icon">🔑</span>
+          <h3 class="pillar-title">Self-Service Freedom</h3>
+          <p class="pillar-body">The event host's guests control their own experience. Walk up. Choose a capsule. Pick strength. Press mix. Receive a perfectly crafted cocktail in under 30 seconds. No queueing. No waiting. No awkward requests.</p>
+          <span class="pillar-accent">Empowered guests</span>
+        </div>
+        <div class="pillar" data-num="5">
+          <span class="pillar-icon">🎭</span>
+          <h3 class="pillar-title">Variety by Design</h3>
+          <p class="pillar-body">60+ cocktail varieties across multiple Bartesian machines, themed to any event — intimate birthday dinner, corporate gala, bridal shower, cultural celebration. The pod selection can be curated for each occasion.</p>
+          <span class="pillar-accent">Themed to any event</span>
+        </div>
+        <div class="pillar" data-num="6">
+          <span class="pillar-icon">🤫</span>
+          <h3 class="pillar-title">Discreet Coordination</h3>
+          <p class="pillar-body">One elegantly presented coordinator attends — not to serve, but to oversee. Machine levels maintained. Capsule selection refreshed. Ice topped up. Presence minimal. Experience seamless.</p>
+          <span class="pillar-accent">Privacy preserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="brand-story">
+  <div class="container">
+    <div class="story-layout">
+      <div class="story-sidebar">
+        <p class="section-label">03 &nbsp; Brand Story</p>
+        <h2 class="section-title">The story of <em>Get A Bar</em></h2>
+        <div class="story-meta">
+          <div class="story-meta-item">
+            <strong>Brand Name</strong>
+            <span>Get A Bar</span>
+          </div>
+          <div class="story-meta-item">
+            <strong>Brand Promise</strong>
+            <span>Every drink, exactly as intended. Every time.</span>
+          </div>
+          <div class="story-meta-item">
+            <strong>Brand Personality</strong>
+            <span>Confident. Precise. Quietly luxurious. A little bit dramatic.</span>
+          </div>
+          <div class="story-meta-item">
+            <strong>Primary Market</strong>
+            <span>Lagos high-net-worth private events; corporate launches; premium social occasions</span>
+          </div>
+          <div class="story-meta-item">
+            <strong>Technology Partner</strong>
+            <span>Bartesian (USA) — commercial-grade cocktail machines trusted by hotels, stadiums and cruise lines</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-content">
+        <p>There is a moment at every great private event — when a perfectly made drink arrives in the right hand, at the right moment — and the room shifts. The conversation deepens. The laughter gets louder. The evening becomes a memory.</p>
+        <p>Get A Bar was built around that moment. Not around the bar itself — around what it enables.</p>
+        <p>The founders of Get A Bar spent years observing something that nobody in Nigeria's event industry was talking about: the more premium the event, the more the drink service was letting it down. Inconsistent cocktails. Mystery ingredients. Ice from questionable water. Five strangers in a private home, more intrusive than celebratory.</p>
+        <p>They asked: what if the bar could run itself?</p>
+        <p>Not the cheap version — the luxury version. A Bartesian Professional cocktail machine that makes 60 bar-quality cocktails at the push of a button. Spirit bottles you can see. Pod capsules with barcodes that ensure the machine never uses the wrong alcohol. Strength settings from Mocktail to Strong, so every guest — Muslim or not, drinking or abstaining — finds their perfect drink. Ice made from bottled water, for flavour purity that most establishments don't even consider.</p>
+
+        <div class="pull-quote">
+          <p>"We didn't want to be another cocktail service. We wanted to be the first cocktail standard. The bar that's always correct — because it was never improvising."</p>
+        </div>
+
+        <p>The name came naturally: Get A Bar. Direct. Confident. A command as much as an invitation. It reflects how the founders see their clients — decisive people who know what they want and choose the best available option to get it. Get A Bar is not for everyone. It is for the host who cares about the details their guests notice but would never mention. The ones who know the difference between a good night and a great one is often invisible — a consistent drink, a clean glass, a service that disappears into the evening rather than demanding attention from it.</p>
+        <p>Get A Bar is built on a simple belief: luxury is not about excess. It is about precision. And precision — at every glass, at every pour, for every guest — is what Get A Bar delivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section class="brand-identity">
+  <div class="container">
+    <div class="identity-header">
+      <p class="section-label" style="justify-content:center; color:rgba(200,150,10,0.8);">04 &nbsp; Brand Identity</p>
+      <h2 class="section-title">What <em>Get A Bar</em> stands for</h2>
+    </div>
+    <div class="identity-grid">
+      <div class="identity-card">
+        <p class="identity-card-label">Vision</p>
+        <h3 class="identity-card-title">To redefine how Nigeria experiences premium drinks at private events</h3>
+        <p class="identity-card-body">Becoming the first brand that turns machine-precision cocktail service into a luxury standard — not just in Lagos, but across West Africa's premium events market.</p>
+      </div>
+      <div class="identity-card">
+        <p class="identity-card-label">Mission</p>
+        <h3 class="identity-card-title">Deliver a perfectly crafted drink — with guaranteed consistency and total guest autonomy</h3>
+        <p class="identity-card-body">Every Get A Bar deployment guarantees the same cocktail quality from the first pour to the last. Guests choose, guests control, guests trust. That's the mission in every event.</p>
+      </div>
+      <div class="identity-card">
+        <p class="identity-card-label">Core Values</p>
+        <h3 class="identity-card-title">Precision. Transparency. Privacy. Elegance.</h3>
+        <p class="identity-card-body">We don't cut corners on quality, we don't hide what's in the bottle, we don't intrude on the experience, and we never let the service look anything less than exceptional.</p>
+      </div>
+      <div class="identity-card">
+        <p class="identity-card-label">Positioning</p>
+        <h3 class="identity-card-title">The premium self-service cocktail bar — for people who hate ordinary</h3>
+        <p class="identity-card-body">Not the cheapest. Not the most popular. The most precise, the most private, the most consistent. For event hosts who see the bar as an extension of their own standard of excellence.</p>
+      </div>
+    </div>
+    <div class="personality-chips">
+      <div class="chip">Precise</div>
+      <div class="chip">Quietly Confident</div>
+      <div class="chip">Inclusive</div>
+      <div class="chip">Technology-Forward</div>
+      <div class="chip">Discreet Luxury</div>
+      <div class="chip">Guest-Empowering</div>
+      <div class="chip">Zero Compromise</div>
+      <div class="chip">Occasion-Ready</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TIERS -->
+<section class="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-label">05 &nbsp; Service Architecture</p>
+      <h2 class="section-title">Three tiers. One standard: <em>perfect.</em></h2>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier">
+        <p class="tier-name">Essential</p>
+        <h3 class="tier-title">The Bar</h3>
+        <p class="tier-price">Machine + pods + pure-ice service</p>
+        <ul class="tier-features">
+          <li>1× Bartesian Premium or Duet machine</li>
+          <li>Pod selection (12 cocktail varieties)</li>
+          <li>Standard spirit bottles (client-approved)</li>
+          <li>Bottled-water ice maker</li>
+          <li>Premium paper cup service</li>
+          <li>1 coordinator (3–5 hrs)</li>
+          <li>Up to 50 guests</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Most Popular</div>
+        <p class="tier-name">Signature</p>
+        <h3 class="tier-title">The Experience</h3>
+        <p class="tier-price">Full setup + mixologist + glassware</p>
+        <ul class="tier-features">
+          <li>2× Bartesian machines (cocktail + mocktail)</li>
+          <li>Pod selection (30+ varieties, themed)</li>
+          <li>Premium spirit selection (curated)</li>
+          <li>Bottled-water ice station</li>
+          <li>Branded glassware service</li>
+          <li>1 coordinator + 1 mixologist for panache</li>
+          <li>50–120 guests</li>
+          <li>Custom pod menu card (per event)</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <p class="tier-name">Prestige</p>
+        <h3 class="tier-title">The Statement</h3>
+        <p class="tier-price">White-glove multi-station experience</p>
+        <ul class="tier-features">
+          <li>3–5× Bartesian machines (themed stations)</li>
+          <li>Full cocktail + mocktail menu (60+ varieties)</li>
+          <li>Premium + ultra-premium spirit selection</li>
+          <li>Multiple ice stations (pure water)</li>
+          <li>Monogrammed glassware + bar setup</li>
+          <li>Full coordinator team + 2 mixologists</li>
+          <li>120+ guests</li>
+          <li>Branded event presence &amp; bar design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE STREAMS -->
+<section class="revenue">
+  <div class="container">
+    <div class="revenue-header">
+      <p class="section-label" style="justify-content:center;">06 &nbsp; Revenue Streams</p>
+      <h2 class="section-title">Seven ways <em>Get A Bar</em> earns</h2>
+    </div>
+    <div class="streams-grid">
+      <div class="stream">
+        <span class="stream-num">01</span>
+        <h3 class="stream-title">Machine &amp; Setup Rental</h3>
+        <p class="stream-body">Core revenue: tiered rental fee per event covering machine deployment, setup, and takedown.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">02</span>
+        <h3 class="stream-title">Pod &amp; Spirit Package</h3>
+        <p class="stream-body">Cocktail pod capsules and spirit bottles sold as a bundled package per event, marked up from cost.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">03</span>
+        <h3 class="stream-title">Glassware Premium</h3>
+        <p class="stream-body">Branded glassware upgrade over standard cups — a per-head or per-event charge for exquisite glass service.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">04</span>
+        <h3 class="stream-title">Mixologist Service</h3>
+        <p class="stream-body">Add-on human flair: a certified mixologist to demo, engage guests, and add panache. Charged per hour or per event.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">05</span>
+        <h3 class="stream-title">Corporate Retainer</h3>
+        <p class="stream-body">Monthly or quarterly agreements with corporate clients for recurring event deployments at a preferred rate.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">06</span>
+        <h3 class="stream-title">Dry Hire (Machine Only)</h3>
+        <p class="stream-body">Machine-only rental for clients who self-manage their event. Lower ASP, higher volume, minimal overhead.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">07</span>
+        <h3 class="stream-title">Brand Partnerships</h3>
+        <p class="stream-body">Spirit brand co-branding at high-profile events; sponsored pod capsule sets for product launches and activations.</p>
+      </div>
+      <div class="stream">
+        <span class="stream-num">08</span>
+        <h3 class="stream-title">Custom Pod Curation</h3>
+        <p class="stream-body">Themed pod menus designed for specific events — weddings, cultural celebrations, brand launches — at a curation fee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="why-now">
+  <div class="container">
+    <div style="max-width: 720px;">
+      <p class="section-label">07 &nbsp; Market Timing</p>
+      <h2 class="section-title" style="font-size: clamp(36px,4vw,52px); color: var(--charcoal); margin-bottom: 24px;">Why Nigeria. <em>Why now.</em></h2>
+      <p class="lead-text">The Nigerian premium events market is growing. Lagos's high-net-worth consumer base is expanding. The cocktail culture is maturing — events that once served beer now serve curated drink experiences. And nobody in this market is offering what Get A Bar offers. The position is open.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-number">$57.5B</span>
+        <p class="stat-label">Nigeria alcoholic drinks market projected volume by 2029</p>
+      </div>
+      <div class="stat">
+        <span class="stat-number">9.7%</span>
+        <p class="stat-label">CAGR of Nigeria's alcoholic drinks market, 2025–2029</p>
+      </div>
+      <div class="stat">
+        <span class="stat-number">60+</span>
+        <p class="stat-label">cocktail varieties available via Bartesian machines</p>
+      </div>
+      <div class="stat">
+        <span class="stat-number">0</span>
+        <p class="stat-label">direct competitors currently offering machine-precision self-service in Lagos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <p class="closing-eyebrow">The Bottom Line</p>
+  <h2 class="closing-title">Nigeria's events don't need another cocktail service. They need a <em>standard.</em></h2>
+  <p class="closing-body">Get A Bar is not competing with Quacktail or the event bar companies. It is opening a category they haven't thought to occupy. Machine-precision, pure-ice, self-service, premium cocktail and mocktail experiences for the people who already know the difference — and have been waiting for someone to offer it.</p>
+  <p class="closing-tag">Get A Bar &nbsp;·&nbsp; A New Venture by Insight 360 &nbsp;·&nbsp; 2026</p>
+</section>
+
+</body>
+</html>
